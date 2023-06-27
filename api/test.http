@@ -1,0 +1,95 @@
+
+
+# ADMIN API
+
+# Create a new admin
+POST http://localhost:3000/admin/signup
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "admin369"
+}
+
+
+
+### 
+#Login as admin
+
+
+POST http://localhost:3000/admin/login
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "admin369"
+}
+
+
+### Add a course
+
+POST http://localhost:3000/admin/courses
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6ImFkbWluIiwiaWF0IjoxNjg3ODczMDg5LCJleHAiOjE2ODc4NzM5ODl9.e1TmYec7Z4IbpSYCbnB0uakUE_61RGCc98g1i5L7Md4
+Content-Type: application/json
+
+{
+    "title":"Learn Java",
+    "description":"Lets get javey with this course",
+    "price": 1000,
+    "imageLink": "https://google.com",
+    "published":true
+}
+
+### Edit course by ID
+PUT http://localhost:3000/admin/courses/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6ImFkbWluIiwiaWF0IjoxNjg3ODczMDg5LCJleHAiOjE2ODc4NzM5ODl9.e1TmYec7Z4IbpSYCbnB0uakUE_61RGCc98g1i5L7Md4
+Content-Type: application/json
+
+{
+    "title":"Learn Rust and Golang",
+    "description":"Lets get rusty with this course",
+    "price": 1000,
+    "imageLink": "https://google.com",
+    "published":true
+}
+
+
+### Get all courses
+GET http://localhost:3000/admin/courses
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6ImFkbWluIiwiaWF0IjoxNjg3ODcyMTY1LCJleHAiOjE2ODc4NzMwNjV9.pykT8puCb-6m9rZMwQsxXtenIO6W09jKbI5Ct65iM74
+
+###
+
+# USER API
+
+### Signup as user
+POST http://localhost:3000/users/signup
+Content-Type: application/json
+
+{
+    "username": "user",
+    "password": "user369"
+}
+
+
+### Login as user
+POST http://localhost:3000/users/login
+Content-Type: application/json
+
+{
+    "username": "user",
+    "password": "user369"
+}
+
+### Get all courses
+GET http://localhost:3000/users/courses
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoidXNlciIsImlhdCI6MTY4Nzg3NDM3OCwiZXhwIjoxNjg3ODc1Mjc4fQ.Mp2ajdlhcJTrVlhql_hRDdLXY3H1mGSPtopt5EkUHMU
+
+### Purchase Course
+POST http://localhost:3000/users/course/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoidXNlciIsImlhdCI6MTY4Nzg3NDM3OCwiZXhwIjoxNjg3ODc1Mjc4fQ.Mp2ajdlhcJTrVlhql_hRDdLXY3H1mGSPtopt5EkUHMU
+
+
+### Get purchased courses
+GET http://localhost:3000/users/purchasedCourse
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoidXNlciIsImlhdCI6MTY4Nzg3NDM3OCwiZXhwIjoxNjg3ODc1Mjc4fQ.Mp2ajdlhcJTrVlhql_hRDdLXY3H1mGSPtopt5EkUHMU
