@@ -67,7 +67,7 @@ POST http://localhost:3000/users/signup
 Content-Type: application/json
 
 {
-    "username": "user",
+    "username": "user1",
     "password": "user369"
 }
 
@@ -83,7 +83,7 @@ Content-Type: application/json
 
 ### Get all courses
 GET http://localhost:3000/users/courses
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoidXNlciIsImlhdCI6MTY4Nzg3NDM3OCwiZXhwIjoxNjg3ODc1Mjc4fQ.Mp2ajdlhcJTrVlhql_hRDdLXY3H1mGSPtopt5EkUHMU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoidXNlciIsImlhdCI6MTY4Nzk0MzgzOSwiZXhwIjoxNjg3OTQ0NzM5fQ.9LscugnOgLTeaMXqmj0pVGbua6TXE9sKoyZTH5hZH1E
 
 ### Purchase Course
 POST http://localhost:3000/users/course/2

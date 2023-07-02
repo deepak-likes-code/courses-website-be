@@ -52,6 +52,13 @@ const getAllCourses = async () => {
 const purchaseCourse = async (courseId, username) => {
   try {
     const course = await Course.findOne({ id: courseId });
+
+    const courseExists = await User.findOne({ username, courses: course._id });
+
+    if (courseExists) {
+      throw new Error("Course already purchased");
+    }
+
     if (course) {
       const user = await User.findOneAndUpdate(
         { username },
